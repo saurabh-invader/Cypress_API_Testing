@@ -1,6 +1,6 @@
 /// < reference types='cypress' />
 
-describe("Test with backend using headless authorization fix", () => {
+describe("Test with backend using headless authorization", () => {
   before("login to app", () => {
     cy.intercept("GET", "https://api.realworld.io/api/tags", {
       fixture: "tags.json",
