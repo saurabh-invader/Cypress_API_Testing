@@ -1,11 +1,11 @@
 /// < reference types='cypress' />
 
-describe("Test with backend", () => {
+describe("Test with backend using headless authorization", () => {
   before("login to app", () => {
     cy.intercept("GET", "https://api.realworld.io/api/tags", {
       fixture: "tags.json",
     });
-    cy.loginToApplication();
+    cy.loginToApplicationHead();
   });
 
   /*** Intercept Calls ***/
@@ -110,7 +110,7 @@ describe("Test with backend", () => {
 
 describe("Test with backend using headless authorization", () => {
   before("login to app", () => {
-    cy.loginToApplicationHL();
+    cy.loginToApplicationHeadless();
   });
 
   it("delete global feed from API", () => {
