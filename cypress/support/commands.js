@@ -36,14 +36,14 @@
 //   }
 // }
 
-Cypress.Commands.add("loginToApplication", () => {
+Cypress.Commands.add("loginToApplicationHead", () => {
   cy.visit("/login");
   cy.get('[placeholder="Email"]').type(Cypress.env("username"));
   cy.get('[placeholder="Password"]').type(Cypress.env("password"));
   cy.get("form").submit();
 });
 
-Cypress.Commands.add("loginToApplicationHL", () => {
+Cypress.Commands.add("loginToApplicationHeadless", () => {
   const userCredentials = {
     user: {
       email: Cypress.env("username"),
